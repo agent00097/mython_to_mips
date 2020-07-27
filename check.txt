@@ -1,0 +1,422 @@
+Starting parse
+Entering state 0
+Reading a token: Next token is token DEF ()
+Shifting token DEF ()
+Entering state 1
+Reading a token: Next token is token ID ()
+Shifting token ID ()
+Entering state 8
+Reducing stack by rule 7 (line 100):
+   $1 = token DEF ()
+   $2 = token ID ()
+	.text
+countdown_START:
+	
+-> $$ = nterm function_start ()
+Stack now 0
+Entering state 6
+Reading a token: Next token is token LP ()
+Shifting token LP ()
+Entering state 38
+Reading a token: Next token is token RP ()
+Shifting token RP ()
+Entering state 71
+Reading a token: Next token is token COLON ()
+Shifting token COLON ()
+Entering state 101
+Reducing stack by rule 6 (line 98):
+   $1 = nterm function_start ()
+   $2 = token LP ()
+   $3 = token RP ()
+   $4 = token COLON ()
+
+	sw $ra,0($sp)
+
+-> $$ = nterm headstart ()
+Stack now 0
+Entering state 5
+Reading a token: Next token is token ID ()
+Shifting token ID ()
+Entering state 24
+Reading a token: Next token is token ASSIGN ()
+Shifting token ASSIGN ()
+Entering state 64
+Reading a token: Next token is token STRING ()
+Reducing stack by rule 20 (line 118):
+   $1 = token ID ()
+   $2 = token ASSIGN ()
+-> $$ = nterm headofid ()
+Stack now 0 5
+Entering state 27
+Next token is token STRING ()
+Shifting token STRING ()
+Entering state 47
+Reducing stack by rule 40 (line 145):
+   $1 = token STRING ()
+	.data
+STR0:	.asciiz "this::"
+	.text
+la $t0,STR0
+-> $$ = nterm factor ()
+Stack now 0 5 27
+Entering state 53
+Reducing stack by rule 37 (line 141):
+   $1 = nterm factor ()
+-> $$ = nterm term ()
+Stack now 0 5 27
+Entering state 52
+Reading a token: Next token is token ID ()
+Reducing stack by rule 34 (line 137):
+   $1 = nterm term ()
+-> $$ = nterm exp ()
+Stack now 0 5 27
+Entering state 51
+Next token is token ID ()
+Reducing stack by rule 24 (line 125):
+   $1 = nterm exp ()
+-> $$ = nterm expression ()
+Stack now 0 5 27
+Entering state 67
+Reducing stack by rule 21 (line 120):
+   $1 = nterm headofid ()
+   $2 = nterm expression ()
+sw $t0,56($sp)
+
+-> $$ = nterm assignment_stmt ()
+Stack now 0 5
+Entering state 28
+Reducing stack by rule 13 (line 110):
+   $1 = nterm assignment_stmt ()
+-> $$ = nterm statement ()
+Stack now 0 5
+Entering state 26
+Reducing stack by rule 12 (line 108):
+   $1 = nterm statement ()
+-> $$ = nterm statements ()
+Stack now 0 5
+Entering state 25
+Next token is token ID ()
+Shifting token ID ()
+Entering state 24
+Reading a token: Next token is token ASSIGN ()
+Shifting token ASSIGN ()
+Entering state 64
+Reading a token: Next token is token STRING ()
+Reducing stack by rule 20 (line 118):
+   $1 = token ID ()
+   $2 = token ASSIGN ()
+-> $$ = nterm headofid ()
+Stack now 0 5 25
+Entering state 27
+Next token is token STRING ()
+Shifting token STRING ()
+Entering state 47
+Reducing stack by rule 40 (line 145):
+   $1 = token STRING ()
+	.data
+STR1:	.asciiz "string**"
+	.text
+la $t0,STR1
+-> $$ = nterm factor ()
+Stack now 0 5 25 27
+Entering state 53
+Reducing stack by rule 37 (line 141):
+   $1 = nterm factor ()
+-> $$ = nterm term ()
+Stack now 0 5 25 27
+Entering state 52
+Reading a token: Next token is token PRINT ()
+Reducing stack by rule 34 (line 137):
+   $1 = nterm term ()
+-> $$ = nterm exp ()
+Stack now 0 5 25 27
+Entering state 51
+Next token is token PRINT ()
+Reducing stack by rule 24 (line 125):
+   $1 = nterm exp ()
+-> $$ = nterm expression ()
+Stack now 0 5 25 27
+Entering state 67
+Reducing stack by rule 21 (line 120):
+   $1 = nterm headofid ()
+   $2 = nterm expression ()
+sw $t0,60($sp)
+
+-> $$ = nterm assignment_stmt ()
+Stack now 0 5 25
+Entering state 28
+Reducing stack by rule 13 (line 110):
+   $1 = nterm assignment_stmt ()
+-> $$ = nterm statement ()
+Stack now 0 5 25
+Entering state 66
+Reducing stack by rule 11 (line 107):
+   $1 = nterm statements ()
+   $2 = nterm statement ()
+-> $$ = nterm statements ()
+Stack now 0 5
+Entering state 25
+Next token is token PRINT ()
+Shifting token PRINT ()
+Entering state 10
+Reading a token: Next token is token LP ()
+Shifting token LP ()
+Entering state 39
+Reducing stack by rule 46 (line 152):
+   $1 = token PRINT ()
+   $2 = token LP ()
+-> $$ = nterm print_head ()
+Stack now 0 5 25
+Entering state 12
+Reading a token: Next token is token ID ()
+Shifting token ID ()
+Entering state 48
+Reading a token: Next token is token COMMA ()
+Reducing stack by rule 41 (line 146):
+   $1 = token ID ()
+lw $t0, 56($sp)
+-> $$ = nterm factor ()
+Stack now 0 5 25 12
+Entering state 53
+Reducing stack by rule 37 (line 141):
+   $1 = nterm factor ()
+-> $$ = nterm term ()
+Stack now 0 5 25 12
+Entering state 52
+Next token is token COMMA ()
+Reducing stack by rule 34 (line 137):
+   $1 = nterm term ()
+-> $$ = nterm exp ()
+Stack now 0 5 25 12
+Entering state 51
+Next token is token COMMA ()
+Reducing stack by rule 24 (line 125):
+   $1 = nterm exp ()
+-> $$ = nterm expression ()
+Stack now 0 5 25 12
+Entering state 49
+Reducing stack by rule 62 (line 181):
+   $1 = nterm expression ()
+li $v0,1
+move $a0,$t0
+syscall
+-> $$ = nterm expression_list ()
+Stack now 0 5 25 12
+Entering state 55
+Next token is token COMMA ()
+Shifting token COMMA ()
+Entering state 89
+Reducing stack by rule 47 (line 154):
+   $1 = token COMMA ()
+-> $$ = nterm comma_found ()
+Stack now 0 5 25 12 55
+Entering state 90
+Reading a token: Next token is token STRING ()
+Shifting token STRING ()
+Entering state 47
+Reducing stack by rule 40 (line 145):
+   $1 = token STRING ()
+	.data
+STR2:	.asciiz " 2 "
+	.text
+la $t0,STR2
+-> $$ = nterm factor ()
+Stack now 0 5 25 12 55 90
+Entering state 53
+Reducing stack by rule 37 (line 141):
+   $1 = nterm factor ()
+-> $$ = nterm term ()
+Stack now 0 5 25 12 55 90
+Entering state 52
+Reading a token: Next token is token COMMA ()
+Reducing stack by rule 34 (line 137):
+   $1 = nterm term ()
+-> $$ = nterm exp ()
+Stack now 0 5 25 12 55 90
+Entering state 51
+Next token is token COMMA ()
+Reducing stack by rule 24 (line 125):
+   $1 = nterm exp ()
+-> $$ = nterm expression ()
+Stack now 0 5 25 12 55 90
+Entering state 116
+Reducing stack by rule 61 (line 180):
+   $1 = nterm expression_list ()
+   $2 = nterm comma_found ()
+   $3 = nterm expression ()
+li $v0,4
+move $a0,$t0
+syscall
+-> $$ = nterm expression_list ()
+Stack now 0 5 25 12
+Entering state 55
+Next token is token COMMA ()
+Shifting token COMMA ()
+Entering state 89
+Reducing stack by rule 47 (line 154):
+   $1 = token COMMA ()
+-> $$ = nterm comma_found ()
+Stack now 0 5 25 12 55
+Entering state 90
+Reading a token: Next token is token ID ()
+Shifting token ID ()
+Entering state 48
+Reading a token: Next token is token RP ()
+Reducing stack by rule 41 (line 146):
+   $1 = token ID ()
+lw $t0, 60($sp)
+-> $$ = nterm factor ()
+Stack now 0 5 25 12 55 90
+Entering state 53
+Reducing stack by rule 37 (line 141):
+   $1 = nterm factor ()
+-> $$ = nterm term ()
+Stack now 0 5 25 12 55 90
+Entering state 52
+Next token is token RP ()
+Reducing stack by rule 34 (line 137):
+   $1 = nterm term ()
+-> $$ = nterm exp ()
+Stack now 0 5 25 12 55 90
+Entering state 51
+Next token is token RP ()
+Reducing stack by rule 24 (line 125):
+   $1 = nterm exp ()
+-> $$ = nterm expression ()
+Stack now 0 5 25 12 55 90
+Entering state 116
+Reducing stack by rule 61 (line 180):
+   $1 = nterm expression_list ()
+   $2 = nterm comma_found ()
+   $3 = nterm expression ()
+li $v0,1
+move $a0,$t0
+syscall
+-> $$ = nterm expression_list ()
+Stack now 0 5 25 12
+Entering state 55
+Next token is token RP ()
+Shifting token RP ()
+Entering state 88
+Reducing stack by rule 48 (line 156):
+   $1 = nterm print_head ()
+   $2 = nterm expression_list ()
+   $3 = token RP ()
+-> $$ = nterm print_stmt ()
+Stack now 0 5 25
+Entering state 30
+Reducing stack by rule 14 (line 111):
+   $1 = nterm print_stmt ()
+-> $$ = nterm statement ()
+Stack now 0 5 25
+Entering state 66
+Reducing stack by rule 11 (line 107):
+   $1 = nterm statements ()
+   $2 = nterm statement ()
+-> $$ = nterm statements ()
+Stack now 0 5
+Entering state 25
+Reading a token: Next token is token ENDDEF ()
+Shifting token ENDDEF ()
+Entering state 65
+Reducing stack by rule 8 (line 102):
+   $1 = nterm headstart ()
+   $2 = nterm statements ()
+   $3 = token ENDDEF ()
+	lw $t0,0($sp)
+	jr $t0
+-> $$ = nterm function ()
+Stack now 0
+Entering state 7
+Reducing stack by rule 4 (line 95):
+   $1 = nterm function ()
+-> $$ = nterm function_list ()
+Stack now 0
+Entering state 4
+Reading a token: Next token is token ID ()
+Reducing stack by rule 2 (line 92):
+   $1 = nterm function_list ()
+
+	.globl main
+	.data
+	.align 2
+	.text
+
+main:
+
+-> $$ = nterm function_list_end ()
+Stack now 0
+Entering state 3
+Next token is token ID ()
+Shifting token ID ()
+Entering state 11
+Reading a token: Next token is token LP ()
+Shifting token LP ()
+Entering state 41
+Reducing stack by rule 51 (line 162):
+   $1 = token ID ()
+   $2 = token LP ()
+sw $t0, 8($sp)
+sw $t1, 12($sp)
+sw $t2, 16($sp)
+sw $t3, 20($sp)
+sw $t4, 24($sp)
+sw $t5, 28($sp)
+sw $t6, 32($sp)
+sw $a0, 40($sp)
+sw $a1, 44($sp)
+sw $a2, 48($sp)
+sw $a3, 52($sp)
+-> $$ = nterm id_lp ()
+Stack now 0 3
+Entering state 16
+Reading a token: Next token is token RP ()
+Shifting token RP ()
+Entering state 58
+Reducing stack by rule 52 (line 164):
+   $1 = nterm id_lp ()
+   $2 = token RP ()
+subu $sp,$sp,104
+addiu $fp,$sp,100
+jal countdown_START
+addiu $sp,$sp,104
+lw $t0, 8($sp)
+lw $t1, 12($sp)
+lw $t2, 16($sp)
+lw $t3, 20($sp)
+lw $t4, 24($sp)
+lw $t5, 28($sp)
+lw $t6, 32($sp)
+lw $a0, 40($sp)
+lw $a1, 44($sp)
+lw $a2, 48($sp)
+lw $a3, 52($sp)
+-> $$ = nterm call_stmt ()
+Stack now 0 3
+Entering state 17
+Reducing stack by rule 67 (line 189):
+   $1 = nterm call_stmt ()
+-> $$ = nterm end ()
+Stack now 0 3
+Entering state 19
+Reducing stack by rule 66 (line 187):
+   $1 = nterm end ()
+-> $$ = nterm end_list ()
+Stack now 0 3
+Entering state 18
+Reading a token: Now at end of input.
+Reducing stack by rule 1 (line 90):
+   $1 = nterm function_list_end ()
+   $2 = nterm end_list ()
+
+li $v0,10
+syscall
+-> $$ = nterm program ()
+Stack now 0
+Entering state 2
+Now at end of input.
+Shifting token $end ()
+Entering state 9
+Stack now 0 2 9
+Cleanup: popping token $end ()
+Cleanup: popping nterm program ()
